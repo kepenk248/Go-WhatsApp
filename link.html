@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chat WhatsApp</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f1724;
+      color: #fff;
+      text-align: center;
+      padding: 60px;
+    }
+    h1 { margin-top: 200px; }
+    #loading { margin: 150px 0; font-size: 14px; color: #bbb; }
+    .spinner {
+      width: 60px; height: 60px;
+      border: 5px solid rgba(255,255,255,0.2);
+      border-top: 5px solid #25d366;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <div class="spinner"></div>
+    <p id="countdown"></p>
+  </div>
+
+  <script>
+    const targetUrl = "https://highlight.androidisme.com/private-villas-in-st-lucia-with-oceanfront-locations/"; // ganti dengan link tujuan kamu
+    let timeLeft = 3; // detik countdown
+
+    const countdownEl = document.getElementById("countdown");
+    countdownEl.textContent = "Please wait " + timeLeft + " ...";
+
+    const timer = setInterval(() => {
+      timeLeft--;
+      countdownEl.textContent = "Please wait " + timeLeft + " ...";
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        window.location.href = targetUrl;
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
